@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Profiles - TeleHealth</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        
+        .doctor-profile-section {
+            display: none; 
+            padding: 40px 0;
+            background-color: #f4f7f9;
+        }
+
+        .doctor-profile-section:target {
+            display: block; 
+        }
+
+        .profile-container {
+            display: flex;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-left { flex: 1.2; }
+        .booking-right { flex: 0.8; }
+
+        .doc-photo-box {
+            width: 100%;
+            height: 350px;
+            background: #fff;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #0052cc;
+            overflow: hidden;
+        }
+
+        .doc-photo-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        .info-bar {
+            background: #0052cc;
+            color: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .bio-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 6px solid #0052cc;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .calendar-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .time-slots { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+
+        .slot {
+            padding: 12px;
+            border: 1px solid #0052cc;
+            background: white;
+            color: #0052cc;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .slot:hover { background: #0052cc; color: white; }
+
+        .section-title { text-align: center; margin-top: 40px; }
+
+        .reviews-container {
+            display: flex;
+            gap: 20px;
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            font-size: 14px;
+        }
+
+        #no-selection-msg { text-align: center; padding: 100px; }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <a href="Homepage.html"><img src="LOGONEW.jpeg" alt="TeleHealth Logo" style="height: 60px;"></a>
+        </div>
+        <div class="menu-links">
+            <a href="Homepage.html">Home</a>
+            <a href="aboutus.html">About us</a>
+            <a href="services.html">Services</a>
+            <a href="providers.html">Providers</a>
+            <a href="resources.html">Resources</a>
+        </div>
+        <div class="nav-button">
+            <a href="login.html" class="login-btn">Log In</a>
+        </div>
+    </div>
+
+   
+
+    <div id="dr-alexandar" class="doctor-profile-section">
+        <div class="profile-container">
+            <div class="profile-left">
+                <div class="doc-photo-box"><img src="Dr-alexandar.jpeg" alt="Dr. Alexandar"></div>
+                <div class="info-bar">Dr. Alexandar Wright</div>
+                <div class="info-bar">Specialist in Cardiology - MBBS, FCPS</div>
+                <div class="bio-box">
+                    <h4>Biography</h4>
+                    <p>Dr. Alexander Wright is an internationally acclaimed Cardiologist with over 15 years of clinical experience. He earned his MD from Harvard Medical School and holds prestigious MRCP and FRCP degrees from the Royal College of Physicians, London. Specializing in Interventional Cardiology, he has served as a Senior Consultant at St Bartholomew's Hospital, UK, and Mount Elizabeth Hospital, Singapore. His expertise lies in advanced heart failure management, angioplasty, and preventive cardiac care. Known for his patient-centric approach, Dr. Wright now leverages global telemedicine to provide world-class heart treatments to patients worldwide.</p>
+                </div>
+            </div>
+            <div class="booking-right">
+                <div class="calendar-box">
+                    <h3>Book Appointment</h3>
+                    <input type="date" id="appointment-date" style="width:100%; padding:10px; margin:15px 0;">
+                    <p><strong>Available Slots</strong></p>
+                    <div class="time-slots">
+                        <button class="slot">10:00 AM</button>
+                        <button class="slot">04:00 PM</button>
+                    </div>
+                    <button onclick="bookAppointment()" class="login-btn" style="width:100%; margin-top:20px; border:none;">Confirm Appointment</button>
+                </div>
+            </div>
+        </div>
+        <div class="section-title"><h2>Patient Reviews</h2></div>
+        <div class="reviews-container">
+            <div class="review-card"><b>John</b> <br> ⭐⭐⭐⭐⭐ <br> "Excellent diagnosis and care."</div>
+            <div class="review-card"><b>Tim </b> <br> ⭐⭐⭐⭐⭐ <br> "Very professional cardiologist."</div>
+            <div class="review-card"><b>Rebeca</b> <br> ⭐⭐⭐⭐⭐ <br> "The cardiologist was very professional."</div>
+            <div class="review-card"><b>Zyan Hoo </b> <br> ⭐⭐⭐⭐⭐ <br> "Excellent service"</div>
+        </div>
+    </div>
+
+    <div id="dr-isabella" class="doctor-profile-section">
+        <div class="profile-container">
+            <div class="profile-left">
+                <div class="doc-photo-box"><img src="isabella.jpeg" alt="Dr. Isabella"></div>
+                <div class="info-bar">Dr. Isabella Muller</div>
+                <div class="info-bar">Dermatology Specialist - 12 Years Experience</div>
+                <div class="bio-box">
+                    <h4>Biography</h4>
+                    <p>Dr. Isabella Muller is a distinguished Dermatology Specialist with over 12 years of experience in clinical and aesthetic skincare. She completed her Master’s in Dermatology from the University of Munich, Germany, and is a certified member of the International Society of Dermatology. Dr. Muller has served as a lead consultant at the Berlin Skin Center and specialized clinics in Zurich. Her expertise includes advanced laser therapies, acne treatment, and skin cancer screenings. She is dedicated to combining medical precision with aesthetic excellence to ensure healthy, glowing skin for all her patients.</p>
+                </div>
+            </div>
+            <div class="booking-right">
+                <div class="calendar-box">
+                    <h3>Book Appointment</h3>
+                    <input type="date"  id="appointment-date" style="width:100%; padding:10px; margin:15px 0;">
+                    <div class="time-slots">
+                        <button class="slot">11:00 AM</button>
+                        <button class="slot">03:30 PM</button>
+                    </div>
+                    <button  onclick="bookAppointment()" class="login-btn" style="width:100%; margin-top:20px; border:none;">Confirm Appointment</button>
+                </div>
+            </div>
+        </div>
+         <div class="section-title"><h2>Patient Reviews</h2></div>
+        <div class="reviews-container">
+            <div class="review-card"><b>Olivia Brown</b> <br> ⭐⭐⭐⭐ <br> "The dermatologist quickly identified my skin issue."</div>
+            <div class="review-card"><b>Imran</b> <br> ⭐⭐⭐⭐⭐ <br> "The doctor was very friendly & suggested efective treatment"</div>
+            <div class="review-card"><b>Chloe Hall</b> <br> ⭐⭐⭐⭐ <br> "The doctor was very professional."</div>
+            <div class="review-card"><b>Ryan Cooper </b> <br> ⭐⭐⭐ <br> "Great experience,simple and clear guidance for my skin care."</div>
+        </div>
+    </div>
+
+    <div id="dr-sebastian" class="doctor-profile-section">
+        <div class="profile-container">
+            <div class="profile-left">
+                <div class="doc-photo-box"><img src="Dr-sebastian.jpeg" alt="Dr. Sebastian"></div>
+                <div class="info-bar">Dr. Sebastian Schmidt</div>
+                <div class="info-bar">Neurology Specialist - Senior Consultant</div>
+                <div class="bio-box">
+                    <h4>Biography</h4>
+                    <p>Dr. Sebastian Schmidt is a Senior Consultant Neurologist known for his expertise in neuro-muscular disorders and stroke management. He earned his PhD in Neurology from the University of Vienna and holds a fellowship from the European Board of Neurology. With over 14 years of practice at Vienna General Hospital and National Hospital for Neurology (UK), he has handled thousands of complex neurological cases. Dr. Schmidt specializes in chronic migraine, epilepsy, and sleep disorders. His commitment to neurological research and patient-focused care makes him a leader in modern brain health.</p>
+                </div>
+            </div>
+            <div class="booking-right">
+                <div class="calendar-box">
+                    <h3>Book Appointment</h3>
+                    <input type="date"  id="appointment-date" style="width:100%; padding:10px; margin:15px 0;">
+                    <div class="time-slots"><button class="slot">10:30 AM</button> <button class="slot">02:00 PM</button></div>
+                    <button  onclick="bookAppointment()" class="login-btn" style="width:100%; margin-top:20px; border:none;">Confirm Appointment</button>
+                </div>
+            </div>
+        </div>
+        <div class="section-title"><h2>Patient Reviews</h2></div>
+<div class="reviews-container">
+    <div class="review-card"><b>Michael Adams</b> <br> ⭐⭐⭐⭐⭐ <br> "The neurologist explained my condition in a very simple way."</div>
+    <div class="review-card"><b>Nadia Hussain</b> <br> ⭐⭐⭐⭐ <br> "Very attentive and professional consultation."</div>
+    <div class="review-card"><b>Robert King</b> <br> ⭐⭐⭐⭐⭐ <br> "Clear diagnosis and helpful treatment plan."</div>
+    <div class="review-card"><b>Fatima Ali</b> <br> ⭐⭐⭐⭐ <br> "I felt confident and well cared for during the session."</div>
+</div>
+    </div>
+
+    <div id="dr-sophie" class="doctor-profile-section">
+        <div class="profile-container">
+            <div class="profile-left">
+                <div class="doc-photo-box"><img src="dr-sophie.jpeg" alt="Dr. Sophie"></div>
+                <div class="info-bar">Dr. Sophie Lefebvre</div>
+                <div class="info-bar">Pediatrics Specialist - Child Specialist</div>
+                <div class="bio-box">
+                    <h4>Biography</h4>
+                    <p>Dr. Sophie Lefebvre is a compassionate Pediatrics Specialist dedicated to the holistic health and development of children. She received her MD in Child Health from Sorbonne University, Paris, and completed her residency at the Necker-Enfants Malades Hospital. With a decade of experience in pediatric emergency and neonatal care, she specializes in child nutrition, vaccinations, and developmental milestones. Dr. Sophie is widely recognized for her "gentle-care" approach, ensuring that both children and parents feel comfortable and informed throughout the healing journey.</p>
+                </div>
+            </div>
+            <div class="booking-right">
+                <div class="calendar-box">
+                    <h3>Book Appointment</h3>
+                    <input type="date"  id="appointment-date" style="width:100%; padding:10px; margin:15px 0;">
+                    <div class="time-slots"><button class="slot">09:00 AM</button> <button class="slot">12:00 PM</button></div>
+                    <button  onclick="bookAppointment()" class="login-btn" style="width:100%; margin-top:20px; border:none;">Confirm Appointment</button>
+                </div>
+            </div>
+        </div>
+        <div class="section-title"><h2>Patient Reviews</h2></div>
+<div class="reviews-container">
+    <div class="review-card"><b>Sarah Khan</b> <br> ⭐⭐⭐⭐⭐ <br> "The doctor was very kind and handled my child with great care."</div>
+    <div class="review-card"><b>James Walker</b> <br> ⭐⭐⭐⭐ <br> "Very patient and explained my child’s condition clearly."</div>
+    <div class="review-card"><b>Amina Rahman</b> <br> ⭐⭐⭐⭐⭐ <br> "Excellent service, my child felt comfortable during the visit."</div>
+    <div class="review-card"><b>Daniel Scott</b> <br> ⭐⭐⭐⭐ <br> "Friendly doctor and very helpful advice for my child."</div>
+</div>
+    </div>
+
+    <div id="dr-sarah" class="doctor-profile-section">
+        <div class="profile-container">
+            <div class="profile-left">
+                <div class="doc-photo-box"><img src="dr-sarah.jpeg" alt="Dr. Sarah"></div>
+                <div class="info-bar">Dr. Sarah Ahmed</div>
+                <div class="info-bar">Gynecology Specialist - MBBS, MS</div>
+                <div class="bio-box">
+                    <h4>Biography</h4>
+                    <p>​Dr. Sarah Ahmed is a highly skilled Gynecologist and Obstetrician with an MBBS and MS from the Dhaka Medical College,Dhaka(DMC),Bangladesh, followed by advanced training in Reproductive Medicine in Singapore. She has served as a specialist at Apollo Hospitals and Mount Elizabeth Medical Centre. With 10 years of experience, she specializes in maternal-fetal medicine, infertility treatments, and laparoscopic surgeries. Dr. Sarah is passionate about women's wellness at every stage of life, providing a supportive and confidential environment for her patients’ healthcare needs.</p>
+                </div>
+            </div>
+            <div class="booking-right">
+                <div class="calendar-box">
+                    <h3>Book Appointment</h3>
+                    <input type="date"  id="appointment-date" style="width:100%; padding:10px; margin:15px 0;">
+                    <div class="time-slots"><button class="slot">04:00 PM</button> <button class="slot">06:00 PM</button></div>
+                    <button  onclick="bookAppointment()" class="login-btn" style="width:100%; margin-top:20px; border:none;">Confirm Appointment</button>
+                </div>
+            </div>
+        </div>
+        <div class="section-title"><h2>Patient Reviews</h2></div>
+<div class="reviews-container">
+    <div class="review-card"><b>Emily Clark</b> <br> ⭐⭐⭐⭐⭐ <br> "The doctor made me feel very comfortable and explained everything clearly."</div>
+    <div class="review-card"><b>Sadia Ahmed</b> <br> ⭐⭐⭐⭐ <br> "Very respectful and professional consultation experience."</div>
+    <div class="review-card"><b>Laura Green</b> <br> ⭐⭐⭐⭐⭐ <br> "I felt safe and well guided throughout the session."</div>
+    <div class="review-card"><b>Hannah Lewis</b> <br> ⭐⭐⭐⭐ <br> "Clear advice and very supportive approach."</div>
+</div>
+    </div>
+
+    <div id="dr-kamrul" class="doctor-profile-section">
+        <div class="profile-container">
+            <div class="profile-left">
+                <div class="doc-photo-box"><img src="Dr-kamrul.jpeg" alt="Dr. Kamrul"></div>
+                <div class="info-bar">Dr. Kamrul Hasan</div>
+                <div class="info-bar">General Physician - Telemedicine Expert</div>
+                <div class="bio-box">
+                    <h4>Biography</h4>
+                    <p>Dr. Kamrul Hasan is a veteran General Physician and an expert in the field of Telemedicine. He completed his MBBS and post-graduate training in Internal Medicine from leading institutions in Bangladesh. With over 15 years of experience in primary healthcare, he has been a pioneer in digital health consultations for rural and urban communities. Dr. Kamrul specializes in managing chronic illnesses like diabetes and hypertension, as well as infectious diseases. His goal is to provide accessible, high-quality medical guidance to anyone, anywhere, through the power of TeleHealth.</p>
+                </div>
+            </div>
+            <div class="booking-right">
+                <div class="calendar-box">
+                    <h3>Book Appointment</h3>
+                    <input type="date"  id="appointment-date" style="width:100%; padding:10px; margin:15px 0;">
+                    <div class="time-slots"><button class="slot">10:00 AM</button> <button class="slot">08:00 PM</button></div>
+                    <button  onclick="bookAppointment()" class="login-btn" style="width:100%; margin-top:20px; border:none;">Confirm Appointment</button>
+                </div>
+            </div>
+        </div>
+        <div class="section-title"><h2>Patient Reviews</h2></div>
+<div class="reviews-container">
+    <div class="review-card"><b>Thomas Wright</b> <br> ⭐⭐⭐⭐ <br> "The consultation was smooth and very helpful."</div>
+    <div class="review-card"><b>Nusrat Jahan</b> <br> ⭐⭐⭐⭐⭐ <br> "Quick response and clear medical advice."</div>
+    <div class="review-card"><b>Ethan Baker</b> <br> ⭐⭐⭐⭐ <br> "The doctor listened carefully and gave practical suggestions."</div>
+    <div class="review-card"><b>Priya Patel</b> <br> ⭐⭐⭐⭐⭐ <br> "Very professional and easy to communicate with."</div>
+</div>
+    </div>
+
+    <footer>
+    <div class="footer-container">
+        <div class="footer-logo-section">
+            <img src="LOGONEW.jpeg" alt="TeleHealth Logo"> <p>Providing quality health care services with professional doctors accessible from anywhere at any time.</p>
+        </div>
+
+        <div class="footer-links-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="providers.html">Providers</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-address-section">
+            <h3>Office Address</h3>
+            <p>123, Medical Tele Health Care,<br>E24, London, UK</p>
+            <p><strong>Phone:</strong> +44 07347652897</p>
+            <p><strong>Email:</strong> supporthealth@gmail.com</p>
+             <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+    
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Medical Tele Health Clinic. All rights Reserved</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body> 
+</html>

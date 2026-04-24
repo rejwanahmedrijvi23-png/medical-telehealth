@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Medical Services - TeleHealth</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        
+        .services-header {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .search-box {
+            margin-top: 20px;
+            background: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            display: inline-block;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            font-size: 16px;
+            width: 300px;
+        }
+
+        
+        .services-grid-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 25px; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #f0f7ff;
+            border: 2px solid #d1e3ff;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            width: 33.33%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        
+        .image-placeholder {
+            width: 100%;
+            height: 180px; 
+            background: #f0f4f8;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+
+        .title-box {
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            min-height: 42px; 
+        }
+
+    
+        .learn-more-btn, .btn-blue {
+            background-color: #0052cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .learn-more-btn:hover, .btn-blue:hover {
+            background-color: #003d99;
+        }
+
+        .footer-buttons {
+            text-align: center;
+            margin-top: 40px;
+            padding-bottom: 50px;
+        }
+
+        .btn-plain {
+            background: none;
+            border: none;
+            color: #555;
+            margin-right: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-blue {
+            background-color: #0052cc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <a href="Homepage.html">
+                <img src="LOGONEW.jpeg" alt="TeleHealth Logo" style="height: 80px; width: auto; display: block;">
+            </a>
+        </div>
+        <div class="menu-links">
+            <a href="Homepage.html">Home</a>
+            <a href="aboutus.html">About us</a>
+            <a href="services.html">Services</a>
+            <a href="providers.html">Providers</a>
+            <a href="resources.html">Resources</a>
+        </div>
+        <div class="nav-button">
+            <a href="login.html" class="login-btn">Log In</a>
+        </div>
+    </div> 
+
+    <div class="container">
+        <div class="services-header">
+            <h2>Our Medical Services</h2>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                🔍 <input type="text" placeholder="Search for doctors or Services">
+            </div>
+        </div>
+
+        <table class="services-grid-table">
+            <tr>
+                <td class="service-card">
+                    <div class="image-placeholder"><img src="cardiology.jpeg" alt="Cardiology"></div>
+                    <div class="title-box">Cardiology Care</div>
+                    <p>Expert heart care consultations from world-class cardiologists.</p>
+                    <a href="faqs.html#cardiology" class="learn-more-btn">Learn more</a>
+                </td>
+                <td class="service-card">
+                    <div class="image-placeholder"><img src="dermatology.jpeg" alt="Dermatology"></div>
+                    <div class="title-box">Dermatology</div>
+                    <p>Advanced treatments for skin health and aesthetic concerns.</p>
+                    <a href="faqs.html#dermatology" class="learn-more-btn">Learn more</a>
+                </td>
+                <td class="service-card">
+                    <div class="image-placeholder"><img src="neurology.jpeg" alt="Neurology"></div>
+                    <div class="title-box">Neurology</div>
+                    <p>Comprehensive brain and nervous system disorder management.</p>
+                    <a href="faqs.html#neurology" class="learn-more-btn">Learn more</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="service-card">
+                    <div class="image-placeholder"><img src="pediatrics.jpeg" alt="Pediatrics"></div>
+                    <div class="title-box">Pediatrics</div>
+                    <p>Compassionate and specialized healthcare for infants and children.</p>
+                    <a href="faqs.html#pediatrics" class="learn-more-btn">Learn more</a>
+                </td>
+                <td class="service-card">
+                    <div class="image-placeholder"><img src="gynecology.jpeg" alt="Gynecology"></div>
+                    <div class="title-box">Women's Health</div>
+                    <p>Dedicated maternal and reproductive health services for women.</p>
+                    <a href="faqs.html#womens-health" class="learn-more-btn">Learn more</a>
+                </td>
+                <td class="service-card">
+                    <div class="image-placeholder"><img src="general-medicine.jpeg" alt="General Physician"></div>
+                    <div class="title-box">General Medicine</div>
+                    <p>Immediate consultations for primary health concerns and illnesses.</p>
+                    <a href="faqs.html#general-medicine" class="learn-more-btn">Learn more</a>
+                </td>
+            </tr>
+        </table>
+
+        <div class="footer-buttons">
+            <button class="btn-plain">Not sure what you need?</button>
+            <a href="resources.html" class="btn-blue" style="text-decoration:none; padding:12px 25px;">Contact Support</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <img src="LOGONEW.jpeg" alt="TeleHealth Logo"> 
+                <p>Providing quality health care services with professional doctors accessible from anywhere at any time.</p>
+            </div>
+            <div class="footer-links-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="Homepage.html">Home</a></li>
+                    <li><a href="aboutus.html">About us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="providers.html">Providers</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-address-section">
+                <h3>Office Address</h3>
+                <p>123, Medical Tele Health Care,<br>E24, London, UK</p>
+                <p><strong>Phone:</strong> +44 07347652897</p>
+                <p><strong>Email:</strong> supporthealth@gmail.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Medical Tele Health Clinic. All rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

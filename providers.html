@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TeleHealth - Providers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="Homepage.html">
+                <img src="LOGONEW.jpeg" alt="TeleHealth Logo" style="height: 80px; width: auto; display: block;">
+            </a>
+        </div>
+        
+        <div class="menu-links">
+            <a href="Homepage.html">Home</a>
+            <a href="aboutus.html">About us</a>
+            <a href="services.html">Services</a>
+            <a href="providers.html">Providers</a>
+            <a href="resources.html">Resources</a>
+        </div>
+
+        <div class="nav-button">
+            <a href="login.html" class="login-btn">Log In</a>
+        </div>
+    </div>
+
+    <div class="provider-container">
+        <div class="filters">
+            <h3>Filters</h3>
+            
+            <label for="speciality">Speciality:</label>
+            <select id="speciality" name="speciality">
+                <option value="cardiology">Cardiology</option>
+                <option value="dermatology">Dermatology</option>
+                <option value="neurology">Neurology</option>
+                <option value="family-medicine">General practice /Family Medicine</option>
+                <option value="paediatrics">Paediatrics</option>
+                <option value="haematology">Haematology</option>
+                <option value="oncology">Oncology</option>
+                <option value="opthalmology">Opthalmology</option>
+                <option value="gynecology">Gynecology</option>
+                <option value="emergency">Emergency Medicine</option>
+                <option value="anesthesia">Anesthesia</option>
+                <option value="psychiatry">Psychiatry</option>
+            </select>
+
+            <label for="availability">Availability:</label>
+            <select id="availability" name="availability">
+                <option value="today">Today</option>
+                <option value="this-week">This week</option>
+                <option value="next-week">Next week</option>
+                <option value="this-month">This Month</option>
+                <option value="next-month">Next Month</option>
+                <option value="within-6-months">Within next 6 Months</option>
+            </select>
+
+            <label for="location">Location:</label>
+            <select id="location" name="location">
+                <option value="london">London</option>
+                <option value="cardiff">Cardiff</option>
+                <option value="kent">Kent</option>
+                <option value="swansea">Swansea</option>
+                <option value="newport">Newport</option>
+                <option value="essex">Essex</option>
+                <option value="surrey">Surrey</option>
+                <option value="cumbria">Cumbria</option>
+                <option value="staffordshire">Staffordshire</option>
+            </select>
+
+            <button class="outline-btn" style="background-color: #0052cc; color: white; border: none; margin-top: 20px;">Apply filters</button>
+        </div>
+
+        <div class="doctor-list">
+            <div class="doctor-grid">
+                
+                <div class="doc-card">
+                    <div class="doc-image-box">
+                        <img src="Dr-alexandar.jpeg" alt="Dr Alexandar Wright" onerror="this.src='https://via.placeholder.com/150/eee/999?text=Image'">
+                    </div>
+                    <div class="doc-info">
+                        <h4>Dr. Alexandar Wright</h4>
+                        <p>Specialist in Cardiology. <br> MBBS, FCPS</p>
+                        <a href="Doctor-profile.html#dr-alexandar" class="outline-btn">View profile</a>
+                    </div>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-image-box">
+                        <img src="isabella.jpeg" alt="Dr Isabella Muller" onerror="this.src='https://via.placeholder.com/150/eee/999?text=Image'">
+                    </div>
+                    <div class="doc-info">
+                        <h4>Dr. Isabella Muller</h4>
+                        <p>Dermatology Specialist <br> 12 years experience</p>
+                        <a href="Doctor-profile.html#dr-isabella" class="outline-btn">View profile</a>
+                    </div>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-image-box">
+                        <img src="Dr-sebastian.jpeg" alt="Dr Sebastian Schmidt" onerror="this.src='https://via.placeholder.com/150/eee/999?text=Image'">
+                    </div>
+                    <div class="doc-info">
+                        <h4>Dr. Sebastian Schmidt</h4>
+                        <p>Neurology Specialist <br> Senior Consultant</p>
+                        <a href="Doctor-profile.html#dr-sebastian" class="outline-btn">View profile</a>
+                    </div>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-image-box">
+                        <img src="dr-sophie.jpeg" alt="Dr Sophie Lefebvre" onerror="this.src='https://via.placeholder.com/150/eee/999?text=Image'">
+                    </div>
+                    <div class="doc-info">
+                        <h4>Dr. Sophie Lefebvre</h4>
+                        <p>Pediatrics Specialist <br> Child Specialist</p>
+                        <a href="Doctor-profile.html#dr-sophie" class="outline-btn">View profile</a>
+                    </div>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-image-box">
+                        <img src="dr-sarah.jpeg" alt="Dr Sarah Ahmed" onerror="this.src='https://via.placeholder.com/150/eee/999?text=Image'">
+                    </div>
+                    <div class="doc-info">
+                        <h4>Dr. Sarah Ahmed </h4>
+                        <p>Gynecology Specialist <br> MBBS, MS</p>
+                        <a href="Doctor-profile.html#dr-sarah" class="outline-btn">View profile</a>
+                    </div>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-image-box">
+                        <img src="Dr-kamrul.jpeg" alt="Dr Kamrul Hasan" onerror="this.src='https://via.placeholder.com/150/eee/999?text=Image'">
+                    </div>
+                    <div class="doc-info">
+                        <h4>Dr. Kamrul Hasan</h4>
+                        <p>General Physician <br> Telemedicine Expert</p>
+                        <a href="Doctor-profile.html#dr-kamrul" class="outline-btn">View profile</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pagination">
+                <button>&lt;</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <img src="LOGONEW.jpeg" alt="TeleHealth Logo Footer"> 
+                <p>Providing quality health care services with professional doctors accessible from anywhere at any time.</p>
+            </div>
+
+            <div class="footer-links-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="Homepage.html">Home</a></li>
+                    <li><a href="aboutus.html">About us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="providers.html">Providers</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-address-section">
+                <h3>Office Address</h3>
+                <p>123, Medical Tele Health Care,<br>E24, London, UK</p>
+                <p><strong>Phone:</strong> +44 07347652897</p>
+                <p><strong>Email:</strong> supporthealth@gmail.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Medical Tele Health Clinic. All rights Reserved</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

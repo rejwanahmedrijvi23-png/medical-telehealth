@@ -1,0 +1,200 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - TeleHealth</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #f4f7f6; font-family: Arial, sans-serif; margin: 0; }
+        
+        /* Updated Table Layout to CSS */
+        .main-layout-table { width: 95%; margin: 20px auto; border-collapse: collapse; border: 0; }
+        .sidebar-column { width: 22%; vertical-align: top; padding-right: 15px; }
+        .content-column { width: 78%; vertical-align: top; }
+        .inner-content-table { width: 100%; border-collapse: collapse; border: 0; }
+        .col-55 { width: 55%; padding-right: 10px; vertical-align: top; }
+        .col-45 { width: 45%; padding-left: 10px; vertical-align: top; }
+
+        .sidebar-btn {
+            width: 100%; padding: 12px; margin-bottom: 10px;
+            background-color: #0052cc; color: white; border: none;
+            border-radius: 8px; cursor: pointer; text-align: left;
+            font-weight: bold; transition: all 0.3s ease;
+        }
+        .sidebar-btn:hover { background-color: #003d99; transform: translateX(5px); }
+
+        .dashboard-box {
+            background: white; border-radius: 12px; padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 82, 204, 0.08); 
+            margin-bottom: 20px; border: 1px solid #d1e3ff;
+        }
+
+        .welcome-board {
+            background: linear-gradient(135deg, #0052cc 0%, #00a3ff 100%); 
+            color: white; padding: 30px; border-radius: 15px;
+            position: relative; overflow: hidden; margin-bottom: 20px;
+        }
+        
+        .join-btn {
+            width: 100%; padding: 12px; background-color: #0052cc;
+            color: white; border: none; border-radius: 6px;
+            font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+
+        .activity-table { width: 100%; border-collapse: collapse; }
+        .activity-table th, .activity-table td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+
+        .content-section { display: none; }
+        .active-section { display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <a href="Homepage.html"><img src="LOGONEW.jpeg" alt="Logo" style="height: 80px;"></a>
+        </div>
+        <div class="menu-links">
+            <a href="Homepage.html">Home</a>
+            <a href="aboutus.html">About us</a>
+            <a href="services.html">Services</a>
+            <a href="providers.html">Providers</a>
+            <a href="resources.html">Resources</a>
+        </div>
+        <div class="nav-button"><a href="login.html" class="login-btn">Log In</a></div>
+    </div>
+
+    <table class="main-layout-table">
+        <tr>
+            <td class="sidebar-column">
+                <div class="dashboard-box">
+                    <button class="sidebar-btn" onclick="showSection('overview')"><i class="fas fa-columns"></i> &nbsp; Overview</button>
+                    <button class="sidebar-btn" onclick="showSection('appointments')"><i class="fas fa-calendar-alt"></i> &nbsp; My Appointments</button>
+                    <button class="sidebar-btn" onclick="showSection('records')"><i class="fas fa-notes-medical"></i> &nbsp; Medical Records</button>
+                    <button class="sidebar-btn" onclick="showSection('prescriptions')"><i class="fas fa-pills"></i> &nbsp; Prescriptions</button>
+                    <button class="sidebar-btn" onclick="showSection('settings')"><i class="fas fa-user-cog"></i> &nbsp; Settings</button>
+                </div>
+            </td>
+
+            <td class="content-column">
+                <div id="overview" class="content-section active-section">
+                    <div class="welcome-board">
+                        <h2><i class="fas fa-hand-paper"></i> Hello, Levi Ackerman</h2>
+                        <p>Welcome back! You have 1 appointment scheduled for today.</p>
+                        <i class="fas fa-clinic-medical bg-icon" style="position: absolute; right: -20px; bottom: -20px; font-size: 150px; opacity: 0.1; color: white;"></i>
+                    </div>
+                    <table class="inner-content-table">
+                        <tr>
+                            <td class="col-55">
+                                <div class="dashboard-box">
+                                    <h3 style="color: #0052cc;"><i class="fas fa-video"></i> Upcoming Appointment</h3>
+                                    <p><strong>Dr. Sarah Ali</strong> (Cardiologist)</p>
+                                    <p>📅 Jun 23, 2026 | 🕒 10:30 PM</p>
+                                    <button onclick="startMeeting()" class="join-btn">Join Meeting Now</button>
+                                </div>
+                            </td>
+                            <td class="col-45">
+                                <div class="dashboard-box">
+                                    <h3 style="color: #0052cc;"><i class="fas fa-heartbeat"></i> Health Summary</h3>
+                                    <p>● Back pain, Asthma</p>
+                                    <p>● High blood pressure</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="appointments" class="content-section">
+                    <div class="dashboard-box">
+                        <h3 style="color: #0052cc;"><i class="fas fa-calendar-check"></i> All Appointments</h3>
+                        <table class="activity-table">
+                            <thead><tr><th>Date</th><th>Doctor</th><th>Status</th></tr></thead>
+                            <tbody>
+                                <tr><td>Jun 23, 2026</td><td>Dr. Sarah Ali</td><td>Confirmed</td></tr>
+                                <tr><td>Apr 22, 2026</td><td>Dr. James Wilson</td><td>Completed</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="records" class="content-section">
+                    <div class="dashboard-box">
+                        <h3 style="color: #0052cc;"><i class="fas fa-file-medical"></i> My Medical Records</h3>
+                        <p>● Blood Test Report (April 2026) - <a href="#" style="color:#0052cc;">Download PDF</a></p>
+                        <p>● Chest X-Ray Scan - <a href="#" style="color:#0052cc;">View Online</a></p>
+                        <p>● MRI Report (13 April, 2025) - <a href="#" style="color:#0052cc;">View Online</a></p>
+                    </div>
+                </div>
+
+                <div id="prescriptions" class="content-section">
+                    <div class="dashboard-box">
+                        <h3 style="color: #0052cc;"><i class="fas fa-pills"></i> Current Medications</h3>
+                        <p><strong>Napa Extend</strong> - 1 after meal (Daily) [11-03-26, prescribed by-Dr. Sarah Ali]</p>
+                        <p><strong>Vitamin D3</strong> - Once a week [11-03-26, prescribed by-Dr. Sarah Ali]</p>
+                        <p><strong>Metformin(Lipitor)</strong> - 1 after meal (Daily) [11-03-26, prescribed by-Dr. Sarah Ali]</p>
+                        <p><strong>Aspirin (Low-Dose)</strong> - Twice a week [22-01-26, prescribed by-Dr. James Wilson] </p>
+                    </div>
+                </div>
+
+                <div id="settings" class="content-section">
+                    <div class="dashboard-box">
+                        <h3 style="color: #0052cc;"><i class="fas fa-user-edit"></i> Profile Settings</h3>
+                        <p><strong>Name:</strong> Levi Ackerman</p>
+                        <p><strong>Date of Birth:</strong> 11 June, 2005</p>
+                        <p><strong>Gender:</strong> Male</p>
+                        <p><strong>Email:</strong> levi.a@telehealth.com</p>
+                        <button class="join-btn" style="width: 200px;">Update Profile Info</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <footer style="margin-top: 20px;">
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <img src="LOGONEW.jpeg" alt="TeleHealth Logo">
+                <p>Providing quality health care services with professional doctors accessible from anywhere at any time.</p>
+            </div>
+            <div class="footer-links-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="Homepage.html">Home</a></li>
+                    <li><a href="aboutus.html">About us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="providers.html">Providers</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-address-section">
+                <h3>Office Address</h3>
+                <p>123, Medical Tele Health Care,<br>E24, London, UK</p>
+                <p><strong>Phone:</strong> +44 07347652897</p>
+                <p><strong>Email:</strong> supporthealth@gmail.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Medical Tele Health Clinic. All rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active-section');
+            });
+            document.getElementById(sectionId).classList.add('active-section');
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
